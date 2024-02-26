@@ -10,6 +10,7 @@
         <module>member</module>
         <module>common</module>
         <module>gateway</module>
+        <module>generator</module>
     </modules>
     <name>train</name>
     <description>train</description>
@@ -66,6 +67,8 @@
                 <artifactId>mysql-connector-j</artifactId>
                 <version>8.0.31</version>
             </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>
