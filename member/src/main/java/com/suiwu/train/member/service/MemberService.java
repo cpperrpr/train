@@ -1,6 +1,7 @@
 package com.suiwu.train.member.service;
 
 import cn.hutool.core.collection.CollUtil;
+import com.suiwu.train.common.util.SnowUtil;
 import com.suiwu.train.member.domain.Member;
 import com.suiwu.train.member.domain.MemberExample;
 import com.suiwu.train.member.mapper.MemberMapper;
@@ -31,7 +32,7 @@ public class MemberService {
 
         }
         Member member = new Member();
-        member.setId(System.currentTimeMillis());
+        member.setId(SnowUtil.getSnowflakeNextId());
         member.setMobile(mobile);
 
         memberMapper.insert(member);
