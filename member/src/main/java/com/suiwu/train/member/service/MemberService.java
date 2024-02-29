@@ -64,7 +64,7 @@ public class MemberService {
             memberMapper.insert(member);
 
         }else{
-            LOG.info("手机号不存在，不插入记录");
+            LOG.info("手机号存在，不插入记录");
         }
        //生成验证码
        // String code = RandomUtil.randomString(4);
