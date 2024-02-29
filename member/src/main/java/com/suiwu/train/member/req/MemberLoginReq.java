@@ -11,6 +11,16 @@ public class MemberLoginReq {
     @NotBlank(message = "【短信验证码】不能为空")
     private String code;
 
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public String getCode() {
         return code;
     }
@@ -32,6 +42,7 @@ public class MemberLoginReq {
         final StringBuffer sb = new StringBuffer("MemberLoginReq{");
         sb.append("mobile='").append(mobile).append('\'');
         sb.append(", code='").append(code).append('\'');
+        sb.append(", token='").append(token).append('\'');
         sb.append('}');
         return sb.toString();
     }

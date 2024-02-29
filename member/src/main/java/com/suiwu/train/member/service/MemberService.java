@@ -5,6 +5,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.suiwu.train.common.exception.BusinessException;
 import com.suiwu.train.common.exception.BusinessExceptionEnum;
+import com.suiwu.train.common.util.JwtUtil;
 import com.suiwu.train.common.util.SnowUtil;
 import com.suiwu.train.member.domain.Member;
 import com.suiwu.train.member.domain.MemberExample;
@@ -93,6 +94,9 @@ public class MemberService {
         }
         MemberLoginResp memberLoginResp = BeanUtil.copyProperties(memberDb,MemberLoginResp.class);
 
+        //单点登录
+        String token = JwtUtil.createToken(memberLoginResp.getId(), memberLoginResp.getMobile());
+        memberLoginResp.setToken(token);
         return memberLoginResp;
 
     }
